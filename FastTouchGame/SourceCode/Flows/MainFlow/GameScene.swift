@@ -6,77 +6,96 @@
 //
 
 import UIKit
-import SpriteKit
 
-class GameScene: Scene {
+final class GameScene: UIViewController {
     
-    private let animationView = SKView()
-    private let scene = SKScene()
-    private var target: SKSpriteNode!
-
+    var tapCount: Int = 0
     
+    // MARK:  UIElements
+    @IBOutlet weak var animationView: UIView!
+    @IBOutlet weak var timerLabel: UILabel!
+    private var target = UIView()
+    private var timeRemaining = 7
+    private var timer = Timer()
+    
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupUI()
-        
-        view.addSubview(animationView)
-        animationView.presentScene(scene)
+        startTimer()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        animationView.center.x = view.bounds.midX
-        animationView.center.y = view.bounds.midY
-    }
-    
+    // MARK: Private
     private func setupUI() {
         let dimension = min(view.frame.width, view.frame.height)
         let size = CGSize(width: dimension, height: dimension)
-
-        scene.size = size
-        
-        scene.backgroundColor = .red
-        
-        
-        animationView.frame.size = scene.size
-        
-        
-            // Создание мишени
-        target = SKSpriteNode(imageNamed: "target")
-        target.position = CGPoint(x: size.width / 2, y: size.height / 2)
-        scene.addChild(target)
-
+        animationView.frame.size = size
+        animationView.backgroundColor = .white
+        target = UIView(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+        target.center = CGPoint(x: size.width / 2, y: size.height / 2)
+        target.backgroundColor = .blue
+        animationView.addSubview(target)
+        timerLabel.textColor = .black
+        timerLabel.font = .systemFont(ofSize: 18)
+        target.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTargetTap)))
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
+    private func startTimer() {
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(updateTimer),
+            userInfo: nil,
+            repeats: true)
+    }
+
+    
+    @objc private func updateTimer() {
+        timeRemaining -= 1
+        timerLabel.text = "Time: \(timeRemaining)"
         
-        let touchLocation = touch.location(in: scene)
-        let touchedNodes = scene.nodes(at: touchLocation)
-        
-        if touchedNodes.contains(target) {
-                // Remove the current target
-            target.removeFromParent()
-            
-                // Create a new target at a random position
-            let randomX = CGFloat.random(in: 0...scene.size.width)
-            let randomY = CGFloat.random(in: 0...scene.size.height)
-            
-            target.position = CGPoint(x: randomX, y: randomY)
-            
-                // Add the new target to the scene
-            scene.addChild(target)
+        if timeRemaining <= 0 {
+            timer.invalidate()
+            endGame()
         }
     }
+    
+    @objc private func handleTargetTap() {
+        target.removeFromSuperview()
+        tapCount += 1
+        
+        let randomX = CGFloat.random(in: (target.bounds.width )/2...(animationView.bounds.width - (target.bounds.width )/2))
+        let randomY = CGFloat.random(in: (target.bounds.height )/2...(animationView.bounds.height - (target.bounds.height )/2))
+        target.center = CGPoint(x: randomX, y: randomY)
+        
+        animationView.addSubview(target)
+    }
+    
+    private func endGame() {
+        
+        guard
+            let controller = storyboard?.instantiateViewController(
+                identifier: LocalConstants.endGameControllerId) as? EndGameScene
+        else { return }
 
+        if tapCount >= 10 {
+            print("YOU WIN")
+            controller.urlString = LocalConstants.googleURL
+        } else {
+            print("nowbody believe in you")
+            controller.urlString = LocalConstants.youtubeURL
+        }
 
+        navigationController?.pushViewController(controller, animated: true)
 
+    }
+    
 }
 
-// MARK: - LocalConstants
 fileprivate enum LocalConstants {
+    static let endGameControllerId = "EndGameScene"
     
-    
+    static let googleURL = "https://www.google.com"
+    static let youtubeURL = "https://www.youtube.com"
 }
