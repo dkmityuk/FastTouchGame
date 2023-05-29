@@ -7,6 +7,10 @@
 
 import UIKit
 
-typealias CompletionBlock = (() -> Void)
-typealias ItemCompletionBlock<Item> = ((Item) -> Void)
-typealias Scene = UIViewController
+enum Constants {
+    enum UserDefaults {
+        static let isFirstGame = "isFirstGame"
+    }
+    
+}
+
