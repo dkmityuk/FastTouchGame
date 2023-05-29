@@ -26,6 +26,7 @@ class EndGameScene: UIViewController {
     private func setupUI() {
         navigationController?.navigationBar.isHidden = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        view.backgroundColor = .white
         backButton.setTitle("Back", for: .normal)
         backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
     }
@@ -35,6 +36,7 @@ class EndGameScene: UIViewController {
             resultWebView.load(URLRequest(url: url))
             view.addSubview(resultWebView)
         }
+        resultWebView.backgroundColor = .white
     }
     
     @objc private func backButtonPressed(_ sender: UIButton) {
