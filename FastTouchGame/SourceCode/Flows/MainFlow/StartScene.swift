@@ -47,6 +47,8 @@ final class StartScene: UIViewController {
     
         // MARK: - private
     private func setupUI() {
+        view.backgroundColor = .white
+        wrapperView.backgroundColor = .white
         aimView.backgroundColor = .orange
         titleLabel.startPulsatingAnimation()
         wrapperView.addSubview(aimView)

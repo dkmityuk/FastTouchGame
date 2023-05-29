@@ -87,43 +87,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YY-Xx-myg">
-                                <rect key="frame" x="100" y="782.33333333333337" width="193" height="35.666666666666629"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Start" titleAlignment="center">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
-                                    <color key="baseForegroundColor" systemColor="tertiarySystemBackgroundColor"/>
-                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
-                                </buttonConfiguration>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvE-zT-a9t">
-                                <rect key="frame" x="99.333333333333329" y="91" width="194.66666666666669" height="48"/>
+                                <rect key="frame" x="99.333333333333329" y="103" width="194.66666666666669" height="48"/>
                                 <color key="tintColor" red="1" green="0.67133070169999998" blue="0.38615414990000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                                 <color key="textColor" red="1" green="0.67133070169999998" blue="0.38615414990000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="highlightedColor" red="1" green="0.67133070169999998" blue="0.38615414990000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zw7-or-Y9a">
-                                <rect key="frame" x="0.0" y="139" width="393" height="643.33333333333337"/>
+                                <rect key="frame" x="0.0" y="151" width="393" height="509"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YY-Xx-myg">
+                                <rect key="frame" x="96.666666666666686" y="660" width="200" height="48"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="dXX-8T-wim"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="n2h-2n-QLM"/>
+                                    <constraint firstAttribute="height" constant="48" id="p6C-rw-8We"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start" titleAlignment="center">
+                                    <backgroundConfiguration key="background"/>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C8i-EV-NLR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" red="1" green="0.67133070173861042" blue="0.38615414985303209" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="VvE-zT-a9t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C8i-EV-NLR" secondAttribute="leading" id="0Id-Zv-HUM"/>
-                            <constraint firstItem="zw7-or-Y9a" firstAttribute="leading" secondItem="C8i-EV-NLR" secondAttribute="leading" id="34z-o7-0G2"/>
-                            <constraint firstItem="VvE-zT-a9t" firstAttribute="top" secondItem="8E0-H6-gX4" secondAttribute="topMargin" constant="-12" id="388-Vb-MeB"/>
-                            <constraint firstItem="C8i-EV-NLR" firstAttribute="trailing" secondItem="0YY-Xx-myg" secondAttribute="trailing" constant="100" id="4mZ-MF-tWt"/>
-                            <constraint firstItem="0YY-Xx-myg" firstAttribute="top" secondItem="zw7-or-Y9a" secondAttribute="bottom" id="Cej-v6-itZ"/>
-                            <constraint firstItem="zw7-or-Y9a" firstAttribute="top" secondItem="VvE-zT-a9t" secondAttribute="bottom" id="Fwv-bR-Bbr"/>
-                            <constraint firstItem="C8i-EV-NLR" firstAttribute="trailing" secondItem="zw7-or-Y9a" secondAttribute="trailing" id="MqK-KT-pCD"/>
-                            <constraint firstItem="0YY-Xx-myg" firstAttribute="leading" secondItem="C8i-EV-NLR" secondAttribute="leading" constant="100" id="Ve1-JN-Pjc"/>
-                            <constraint firstItem="C8i-EV-NLR" firstAttribute="bottom" secondItem="0YY-Xx-myg" secondAttribute="bottom" id="Wra-am-pbo"/>
-                            <constraint firstItem="VvE-zT-a9t" firstAttribute="centerX" secondItem="8E0-H6-gX4" secondAttribute="centerX" id="ekH-55-o19"/>
+                            <constraint firstItem="0YY-Xx-myg" firstAttribute="centerX" secondItem="8E0-H6-gX4" secondAttribute="centerX" id="7wk-nA-7VL"/>
+                            <constraint firstItem="VvE-zT-a9t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C8i-EV-NLR" secondAttribute="leading" id="JqN-xr-WAG"/>
+                            <constraint firstItem="C8i-EV-NLR" firstAttribute="bottom" secondItem="0YY-Xx-myg" secondAttribute="bottom" constant="110" id="Mql-0Q-ONR"/>
+                            <constraint firstItem="VvE-zT-a9t" firstAttribute="top" secondItem="C8i-EV-NLR" secondAttribute="top" id="Qs5-Bl-jze"/>
+                            <constraint firstItem="C8i-EV-NLR" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VvE-zT-a9t" secondAttribute="trailing" id="St4-WI-1Gc"/>
+                            <constraint firstItem="C8i-EV-NLR" firstAttribute="trailing" secondItem="zw7-or-Y9a" secondAttribute="trailing" id="Ye1-TE-nki"/>
+                            <constraint firstItem="0YY-Xx-myg" firstAttribute="top" secondItem="zw7-or-Y9a" secondAttribute="bottom" id="Z9B-1M-VAv"/>
+                            <constraint firstItem="zw7-or-Y9a" firstAttribute="leading" secondItem="C8i-EV-NLR" secondAttribute="leading" id="c86-Ny-x48"/>
+                            <constraint firstItem="VvE-zT-a9t" firstAttribute="centerX" secondItem="8E0-H6-gX4" secondAttribute="centerX" id="gQg-Wr-reU"/>
+                            <constraint firstItem="C8i-EV-NLR" firstAttribute="bottom" secondItem="0YY-Xx-myg" secondAttribute="bottom" constant="110" id="owK-Z1-dDk"/>
+                            <constraint firstItem="0YY-Xx-myg" firstAttribute="centerX" secondItem="8E0-H6-gX4" secondAttribute="centerX" id="wSj-Im-Xpr"/>
+                            <constraint firstItem="zw7-or-Y9a" firstAttribute="top" secondItem="VvE-zT-a9t" secondAttribute="bottom" id="z5r-6h-bDC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NT7-E0-9vf"/>
@@ -181,9 +189,6 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
