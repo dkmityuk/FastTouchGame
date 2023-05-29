@@ -52,7 +52,6 @@ final class StartScene: UIViewController {
         aimView.backgroundColor = .orange
         titleLabel.startPulsatingAnimation()
         wrapperView.addSubview(aimView)
-        startButton.backgroundColor = .orange
         aimView.frame = CGRect(
             x: CGFloat.random(in: .zero...wrapperView.bounds.width),
             y: CGFloat.random(in: .zero...wrapperView.bounds.height),
@@ -104,7 +103,7 @@ final class StartScene: UIViewController {
             let controller = storyboard?.instantiateViewController(
                 identifier: LocalConstants.gameSceneId) as? GameScene
         else { return }
-        
+        print(23)
         navigationController?.pushViewController(controller, animated: true)
     }
     

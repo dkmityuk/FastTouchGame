@@ -3,4 +3,54 @@
    uuid = "36CAE27F-0960-465E-9107-5269D8662B2E"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0258C8FF-BDE5-4EAB-A817-FFA0E7B695E9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FastTouchGame/SourceCode/Flows/MainFlow/StartScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "startButtonPressed()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0258C8FF-BDE5-4EAB-A817-FFA0E7B695E9 - 8a76c54fb4f28398"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FastTouchGame.StartScene.startButtonPressed() -&gt; ()"
+                  moduleName = "FastTouchGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmytrokmytiuk/Desktop/FastTouchGame/FastTouchGame/SourceCode/Flows/MainFlow/StartScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "0258C8FF-BDE5-4EAB-A817-FFA0E7B695E9 - 8a76c54fb4f283b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FastTouchGame.StartScene.startButtonPressed() -&gt; ()"
+                  moduleName = "FastTouchGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmytrokmytiuk/Desktop/FastTouchGame/FastTouchGame/SourceCode/Flows/MainFlow/StartScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
