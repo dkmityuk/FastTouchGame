@@ -11,7 +11,7 @@ final class GameScene: UIViewController {
     
     // MARK: Variables
     private var tapCount: Int = .zero
-    private var timeRemaining = LocalConstants.timeRemaining
+    private var timeRemaining = 7
     private var gameStarted = false
     
     // MARK:  UIElements
@@ -79,6 +79,7 @@ final class GameScene: UIViewController {
             self?.aimView.alpha = .zero
         } completion: { [weak self] _ in
             guard let self = self else { return }
+            
             self.aimView.removeFromSuperview()
             self.tapCount += 1
             self.aimView.frame.origin = .getRandomCoordinates(parentView: wrapperView, childView: aimView)
@@ -93,7 +94,7 @@ final class GameScene: UIViewController {
             let controller = storyboard?.instantiateViewController(
                 identifier: LocalConstants.endGameControllerId) as? EndGameScene
         else { return }
-        
+
         if tapCount >= 10 {
             controller.urlString = LocalConstants.googleURL
         } else {
@@ -111,5 +112,4 @@ fileprivate enum LocalConstants {
     static let youtubeURL = "https://www.youtube.com"
     
     static let aimSize: CGFloat = 64
-    static let timeRemaining = 7
 }
